@@ -40,6 +40,13 @@ while game_is_on:
         assign(answer_state)
     elif answer_state == "Exit":
         game_is_on = False
+        #save missing states to csv
+        missing_states = []
+        for state in states_list:
+            if state not in answered_states:
+                missing_states.append(state)
+        new_df = pandas.DataFrame(missing_states)
+        new_df.to_csv("missing_states.csv")
     if ans_count == TOTAL_STATES:
         game_is_on = False
 
