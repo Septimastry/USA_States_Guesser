@@ -38,12 +38,9 @@ while game_is_on:
         ans_count+= 1
         answered_states.append(answer_state)
         assign(answer_state)
+    elif answer_state == "Exit":
+        game_is_on = False
     if ans_count == TOTAL_STATES:
         game_is_on = False
 
 
-
-
-
-
-turtle.mainloop()
